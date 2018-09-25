@@ -20,7 +20,6 @@
     </mat-grid-tile>
   </mat-grid-list>
 
-
   <mat-grid-list cols="4">
     <mat-grid-tile *ngFor="let worker of workers">
         <div [ngClass]="(worker.mouseOver) ? 'image-container-hover' : 'image-container'" (mouseenter)="mouseHovering(worker)" (mouseleave)="mouseLeft(worker)">
@@ -34,5 +33,4 @@
 
   <mat-paginator [length]="page.totalElements" [pageSize]="page.size" (page)="getWorkers($event)">
   </mat-paginator>
-
 </div>

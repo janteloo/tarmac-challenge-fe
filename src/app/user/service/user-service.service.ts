@@ -20,5 +20,4 @@ export class UserService {
   findWorkersByRole(role: string) : any {
     return this.httpClient.get(`${this.API_URL}/workers/search/byRole?role=${role}`);
   }
-
 }

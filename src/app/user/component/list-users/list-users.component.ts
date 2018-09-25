@@ -67,6 +67,4 @@ export class ListUsersComponent implements OnInit {
   public mouseLeft(worker: any) {
     worker.mouseOver = false;
   }
-
-
 }
