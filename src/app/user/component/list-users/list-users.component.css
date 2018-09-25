@@ -1,0 +1,36 @@
+.grid-image {
+  width: 100%;
+}
+
+.worker-name {
+  position: absolute; 
+  bottom: 10px;
+  color: white;
+  font-size: 1.5vw;
+  width: 100%;
+  text-align: center;
+}
+
+.worker-name-hidden {
+  display: none;
+}
+
+.image-container {
+  width: 100%; 
+  opacity: 1;
+}
+
+.image-container-hover {
+  width: 100%;
+  opacity: 0.5;
+}
+
+.workers-container {
+  margin: 20px auto 20px;
+  width: 80%;
+  align-items: center;
+}
+
+mat-form-field {
+  margin-bottom: 20px;
+}

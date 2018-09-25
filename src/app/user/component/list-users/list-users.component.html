@@ -1,0 +1,38 @@
+
+<div class="workers-container">
+  <mat-grid-list cols="2" rowHeight="50">
+    <mat-grid-tile>
+      <mat-form-field>
+          <input matInput type="text" placeholder="Filter Workers By Name" [formControl]="queryFieldName">
+          <button mat-button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="searchText=''">
+            <mat-icon>close</mat-icon>
+          </button>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field>
+          <input matInput type="text" placeholder="Filter Workers By Role" [formControl]="queryFieldRole">
+          <button mat-button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="searchText=''">
+            <mat-icon>close</mat-icon>
+          </button>
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+  <mat-grid-list cols="4">
+    <mat-grid-tile *ngFor="let worker of workers">
+        <div [ngClass]="(worker.mouseOver) ? 'image-container-hover' : 'image-container'" (mouseenter)="mouseHovering(worker)" (mouseleave)="mouseLeft(worker)">
+          <img src="{{worker.pictureUrl}}" alt="{{worker.name}}" class="grid-image">
+          <div [ngClass]="(worker.mouseOver) ? 'worker-name' : 'worker-name-hidden'">
+            <p>{{worker.name}}</p>
+          </div>
+        </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-paginator [length]="page.totalElements" [pageSize]="page.size" (page)="getWorkers($event)">
+  </mat-paginator>
+
+</div>
